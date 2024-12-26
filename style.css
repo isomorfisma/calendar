@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ffe3e3, #ffc4c4);
+    color: #5e2129;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  
+  .calendar-container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Maksimal 90% dari lebar layar */
+    max-width: 500px; /* Tidak lebih lebar dari 500px */
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #b83256;
+  }
+  #month-year {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  #calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .day {
+    padding: 10px;
+    text-align: center;
+    background: #ffe3e3;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .day.special {
+    background: #ff80ab;
+    color: white;
+  }
+  
+  .day:hover {
+    background: #ff4081;
+    color: white;
+  }
+  
+  
+  #popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+  }
+  
+  #close-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff0000;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-header button {
+    background: #ff80ab;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .calendar-header button:hover {
+    background: #ff4081;
+  }
+
+  .close-popup-button {
+    background: #ff80ab;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .close-popup-button:hover {
+    background: #ff4081;
+  }
+  
+
+  #year-select {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-left: 5px;
+  }
+
+  .animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  #prev-month,
+#next-month {
+  display: inline-block; /* Default terlihat */
+}
+
+#prev-month.hidden,
+#next-month.hidden {
+  display: none; /* Disembunyikan */
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 600px) {
+    .day {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    #month-year {
+      font-size: 16px;
+    }
+  
+    .calendar-header button {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }

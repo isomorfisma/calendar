@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calendar, made with love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animasi bunga -->
+  <div id="flower-animation" class="animation-container"></div>
+
+  <div class="calendar-container">
+    <h1>calendar, made with <strong>love</strong></h1>
+    <div class="calendar-header">
+      <button id="prev-month">&lt;</button>
+      <span id="month-year">
+        <span id="month-name"></span>
+        <select id="year-select"></select>
+      </span>
+      <button id="next-month">&gt;</button>
+    </div>
+    <div id="calendar">
+      <!-- Kalender akan dibuat di sini oleh JavaScript -->
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="hidden">
+    <div class="popup-content">
+      <span id="close-btn" class="close-icon">&times;</span>
+      <p id="popup-text"></p>
+      <button id="close-popup-btn" class="close-popup-button">Close</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
